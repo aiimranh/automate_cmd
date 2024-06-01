@@ -4,7 +4,11 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 	Exit
 }
 
+Write-Host "Installing oh-my-posh"
 winget install JanDeDobbeleer.OhMyPosh -s winget
+
+Write-Host "Bypass Execution Policy"
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 
 # Required Steps
 Write-Host "Configuring Command Prompt"
